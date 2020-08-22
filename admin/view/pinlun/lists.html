@@ -1,0 +1,66 @@
+<?php
+    include './layout/top.html';
+    include './layout/left.html';
+    include './layout/main_top.html';
+?>
+<div id="right">
+
+
+
+    </div>
+    <div class="index_right_03">
+        <table border="1" align="center" width="800">
+            <caption><h2>评论列表</h2></caption>
+            <tr>
+                <td colspan="9">
+                    <form action="" metnod="get">
+                        <input type="hidden" name="m" value="pinlun">
+                        <input type="hidden" name="a" value="lists">
+                        <input type="text" name="select" id="">
+                        <input type="submit" value="查询">
+                    </form>
+                </td>
+
+            </tr>
+            <tr>
+                <th>编号</th>
+                <th>评论内容</th>
+                <th>提交日期</th>
+                <th>操作</th>
+            </tr>
+
+            <?php
+                if(is_array($arr) && !empty($arr)){
+                    foreach($arr as $v){
+                        echo '<tr>';
+                            echo '<td>'.$v['id'].'</td>';
+                            echo '<td>'.$v['content'].'</td>';
+                            echo '<td>'.$v["createtime"].'</td>';
+                          
+                            echo '<td><a href="./index.php?m=pinlun&a=del&id='.$v['id'].'">删除</a>
+                            </td>';
+                        echo '</tr>';
+                    }
+                }else{
+                    echo '<tr><td colspan="8">没有数据</td></tr>';
+                }
+            ?>
+            <tr>
+                <td style="text-align: right" colspan="9">
+                    <span>共<?=$total?>条/当前<?=$dpage?>页/共<?=$pageAll?>页</span>
+                    <a href="?m=pinlun&a=lists&page=1">首页</a>
+                    <a href="?m=pinlun&a=lists&page=<?=$prePage?>">上一页</a>
+                    <a href="?m=pinlun&a=lists&page=<?=$nextPage?>">下一页</a>
+                    <a href="?m=pinlun&a=lists&page=<?=$pageAll?>">尾页</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="index_right_04"></div>
+
+
+</div>
+<!-- 右侧结束 -->
+</body>
+</html>
+

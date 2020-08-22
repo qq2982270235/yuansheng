@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=11,10,9,edge">
+    <title></title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="left">
+        <!-- 文章导航 -->
+       <div class="bar">
+           <a href="">首页-></a>
+           <a href="">列表</a>
+       </div>
+       <!-- 新闻 -->
+        <div class="wenzhang_kuang">
+           <h2>跨境电商得到大力推广</h2>
+           <span>作者：大帅帅</span> <span>发布时间：2020—05—09</span> <span>浏览次數：59</span>
+           <p class="essay">5月6日，国务院发布《关于同意在雄安新区等46个城市和地区设立跨境电子商务综合试验区的批复》 （以下简称《批复》 ） ，同息在雄安新区、大同市、满洲里市等46个城市和地区设立跨境电子商务综合试验区.批复指出，综合试验区建设要复制推广前四批综合试验区成熟经验做法，推动产业转型升级，开展品牌建设，引导诗填电子商务全面发展，全力以赴稳住外贸外资基本盘，准进贸易高质量发展.</p>
+           <p class="essay">《批复》 出，综合试验区建设要按照鼓励创新、包容审慎的原则，坚持问题导向，加强协调配合，着力在跨境电子商务企业对企业（B2B ）方式相关环节的技术标准、业务流程、监管模式和信息化建设等方面探索创新，研究出台更多支持举措，为综合试验区发展营造良好的环境，更好地促进和规范跨境电子商务产业发展壮大.</p>
+           <p class="essay">《《批复》明确，要进一步完善跨境电子商务统计体系，实行对综台试验区内跨境电子商务零售出口货物按规定免征增值税和消费税、企业所得税核走征收等支持政策，研究将具备条件的综合试验区所在城市纳入跨境电子商务零售进口试点范围，支持企业共建共享海外仓， 记者了解到，我国正在配酸更多支持举措推进跨境电商综合试验区进一步发展， 4月7日的国务院常务会议指出，近年来我国跨境电商进出口规模持续快速增长，成为外贸发展新亮点，当前传统外贸受到疫情较大冲击，必须更大发挥跨境电商独特优势，以新业杰助力外贸克难前行。会议决定，在已设立59个跨境电商综合试验区基础上，再新设46个跨境电商综合试验区</p>
+        </div>
+        <!-- 评论区 -->
+       <div class="essay-footer">
+            <h5>评论区</h5>
+			<div class="biao1">
+				<form action="" class="qweewq">
+				    <textarea name="DIVCSS5" cols="70" rows="10"></textarea>
+					<button type="button">提交</button>
+				</form> 
+			</div>
+            <ul class="comment">
+                <li>
+                    <div>
+                        <span class="man">评论人</span>
+                        <span class="comment-data">
+                            2020-06-08
+                        </span>
+                    </div>
+                    <span class="comment-info">这篇文章写的真好</span>
+                </li>
+                <li>
+                    <div>
+                        <span class="man">评论人</span>
+                        <span class="comment-data">
+                            2020-06-08
+                        </span>
+                    </div>
+                    <span class="comment-info">这篇文章写的真好</span>
+                </li>
+                <li>
+                    <div>
+                        <span class="man">评论人</span>
+                        <span class="comment-data">
+                            2020-06-08
+                        </span>
+                    </div>
+                    <span class="comment-info">这篇文章写的真好</span>
+                </li>
+                <li>
+                    <div>
+                        <span class="man">评论人</span>
+                        <span class="comment-data">
+                            2020-06-08
+                        </span>
+                    </div>
+                    <span class="comment-info">这篇文章写的真好</span>
+                </li>
+                <li>
+                    <div>
+                        <span class="man">评论人</span>
+                        <span class="comment-data">
+                            2020-06-08
+                        </span>
+                    </div>
+                    <span class="comment-info">这篇文章写的真好</span>
+                </li>
+            </ul>
+       </div>
+    </div>
+    <div class="main_right">
+        <div class="right_top">
+            <img src="./images/1.jpg" alt="">
+        </div>
+        <div class="right_bottom">
+            <h3>热门标签</h3>
+            <ul>
+
+                <?php
+                    if(isset($keywords) && is_array($keywords) && !empty($keywords)){
+                        foreach($keywords as $v){
+                            echo '<li><a href="#">'.$v.'</a></li>';
+                        }
+                    }
+
+
+                ?>
+
+
+
+            </ul>
+        </div>
+    </div>
+    <div class="zhiming_right">
+        <h3 class="zhiming_h3">互联网趣闻</h3>
+        <ul>
+            <li><a href="">程序猿用66台iPhone求婚！结局令人惊讶！</a></li>
+            <li><a href="">程序猿用66台iPhone求婚！结局令人惊讶！</a></li>
+            <li><a href="">程序猿用66台iPhone求婚！结局令人惊讶！</a></li>
+            <li><a href="">程序猿用66台iPhone求婚！结局令人惊讶！</a></li>
+            <li><a href="">程序猿用66台iPhone求婚！结局令人惊讶！</a></li>
+            <li><a href="">程序猿用66台iPhone求婚！结局令人惊讶！</a></li>
+            <li><a href="">程序猿用66台iPhone求婚！结局令人惊讶！</a></li>
+            <li><a href="">程序猿用66台iPhone求婚！结局令人惊讶！</a></li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+</div>
+</body>
+</html>

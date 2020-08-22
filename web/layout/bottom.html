@@ -1,0 +1,36 @@
+<style>
+    .c{
+        clear: both;
+    }
+</style>
+<!-- 页脚开始-->
+ <div id="index_all" class="c">
+        <div id="index_footer">
+            <div class="footer_top">
+<!--                <a href="<?=$positionfour['url']?>" title="<?=$positionfour['title']?>"><img src="../public/upload/<?=$positionfour['pimg']?>" alt=""></a>-->
+            </div>
+            <div class="footer_bottom">
+                <ul>
+                    <?php
+                        if(isset($arr) && count($arr)>0){
+                            foreach($arr as $v){
+                            echo '<li><a href="'.$v['url'].'" target="_blank">'.$v['webname'].'</a></li>';
+                            }
+                        }
+                    ?>
+                </ul>
+                <div style="clear: both"></div>
+            </div>
+            <div class="bottom_jieshao">
+                <ul>
+                    <li><?=DIZHI?></li>
+                    <li><?=RIQI?></li>
+                    <li><?=BEIAN?></li>
+                </ul>
+            </div>
+        </div>
+        <div class="float"></div>
+        <!-- 页脚结束-->
+    </div>
+</body>
+</html>

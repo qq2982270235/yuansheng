@@ -1,0 +1,399 @@
+<?php
+    include './layout/top.html';
+?>
+<link rel="stylesheet" href="./include/css/css.css">
+<link rel="stylesheet" href="./include/css/stylee.css">
+<div id="index_all">
+        <!-- 主题开始-->
+            <div id="index_main">
+                <div class="main_max">
+                    <div class="main_left">
+                        <div class="left_one">
+                            <h3>技术分享</h3>
+                            <ul style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+                                
+                                <?php
+                                if(is_array($jsfx) && !empty($jsfx)){
+                                    foreach($jsfx as $v){
+                                     echo '<li><span class="li_icon"></span><a href="?m=mylist&a=wenzhang&id='.$v['id'].'">'.$v['title'].'</a></li>';
+                                    }
+                                }
+                            ?>
+
+
+                            </ul>
+                        </div>
+                        <div class="left_two">
+                            <h3>行业资讯</h3>
+                            <ul style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+                               
+                                <?php
+                                if(is_array($hyzx) && !empty($hyzx)){
+                                    foreach($hyzx as $v){
+                                     echo ' <li><span class="li_icon"></span><a href="?m=mylist&a=wenzhang&id='.$v['id'].'">'.$v['title'].'</a></li>';
+                                    }
+                                }
+                            ?>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="main_right">
+                        <div class="right_top">
+                            <div class="c-banner" style="width: 97%">
+                                <div class="banner">
+                                    <ul>
+                                        <?php
+                                            if(is_array($positionOne) && !empty($positionOne)){
+                                                  foreach($positionOne as $v){
+                                                    echo '<li><a target="_blank" title="'.$v['title'].'" href="'.$v['url'].'"><img src="../public/upload/'.$v['pimg'].'"></a></li>';
+                                                  }
+                                            }
+            
+                                        ?>
+            
+                                    </ul>
+                                </div>
+                                <div class="nexImg">
+                                    <img src="./include/images/nexImg.png" />
+                                </div>
+                                <div class="preImg">
+                                    <img src="./include/images/preImg.png" />
+                                </div>
+                                <div class="jumpBtn">
+                                    <ul>
+                                        <?php
+                                              if(is_array($positionOne) && !empty($positionOne)){
+                                                $len = count($positionOne);
+                                                for($i = 0;$i<$len;$i++){
+                                                    echo ' <li jumpImg="'.$i.'"></li>';
+                                                }
+                                              }
+            
+            
+                                        ?>
+            
+            
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right_bottom">
+                            <h3>热门标签</h3>
+                            <ul style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+                                <?php
+                    if(isset($keywords) && is_array($keywords) && !empty($keywords)){
+                        $keywords = array_slice($keywords,0,6);
+                        foreach($keywords as $v){
+                            echo '<li><a href="?m=mylist&a=show&id='.$v.'">'.$v.'</a></li>';
+                                }
+                                }
+
+
+                                ?>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="center_zhiming">
+                    <div class="zhiming_left">
+                        <div class="zhiming_left_top">
+                            <h3 class="zhiming_h3">IT知名企业</h3>
+                            <ul>
+                             <?php
+                                              if(is_array($position5) && !empty($position5)){
+                                              
+                                                $len = count($position5);
+                                                for($i = 0;$i<$len;$i++){
+                                                    echo ' <li class="zhiming_one" style="width:177px;"><a href="'.$position5[0]['url'].'"><img style="width:100%" src="../public/upload/'.$position5[0]['pimg'].'" alt=""><span>'.$position5[0]['title'].'</span></a></li>';
+                                                }
+                                              }
+            
+            
+                                        ?>
+                          
+                                
+                                
+                            </ul>
+                            <div class="zhiming_left_bottom"><a target="_blank" title="<?=$positionThree['title']?>" href="<?=$positionThree['url']?>"><img src="../public/upload/<?=$positionThree['pimg']?>"></a></div>
+                        </div>
+                    </div>
+                    <div class="zhiming_right">
+                        <h3 class="zhiming_h3">互联网趣闻</h3>
+                        <ul style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+                           
+                            <?php
+                                if(is_array($art14) && !empty($art14)){
+                                    foreach($art14 as $v){
+                                     echo ' <li><a href="">'.$v['title'].' </a></li>';
+                                    }
+                                }
+                            ?>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="center_mingren">
+                    <div class="mingren_left">
+                        <h3 class="zhiming_h3">IT名人堂</h3>
+                        <ul class="left_shuaige" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+                            
+                            <?php
+                                              if(is_array($position6) && !empty($position6)){
+                                                $len = count($position6);
+                                                for($i = 0;$i<$len;$i++){
+                                                    echo '<li><a href="'.$position6[0]['url'].'"><img src="../public/upload/'.$position6[0]['pimg'].'" alt=""><br/><span>'.$position6[0]['title'].'</span></a></li>';
+                                                }
+                                              }
+            
+            
+                                        ?>
+                        </ul>
+                        <ul class="left_biaoqian">
+                            <li><a href="">人好嘴甜能赚钱</a></li>
+                            <li><a href="">人好嘴甜能赚钱</a></li>
+                            <li><a href="">人好嘴甜能赚钱</a></li>
+                            <li><a href="">人好嘴甜能赚钱</a></li>
+                            <li><a href="">人好嘴甜能赚钱</a></li>
+                            <li><a href="">人好嘴甜能赚钱</a></li>
+                        </ul>
+                    </div>
+                    <div class="mingren_right"> <div class="mingren_right"><a target="_blank" title="<?=$positionTwo['title']?>" href="<?=$positionTwo['url']?>"><img src="../public/upload/<?=$positionTwo['pimg']?>"></a></div></div>
+                </div>
+                <div class="web_qianduan">
+                    <div class="qianduan_two">
+                        <h3 class="web_h3">MYSQL数据库</h3>
+                        <ul style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+                           
+                            <?php
+                                if(is_array($art9) && !empty($art9)){
+                                    foreach($art9 as $v){
+                                     echo ' <li><a href="?m=mylist&a=wenzhang&id='.$v['id'].'">'.$v['title'].'  <span>['.date("m-d",$v["addtime"]).']</span> </a></li>';
+                                    }
+                                }
+                            ?>
+                        </ul>
+                    </div>
+                    <div class="qianduan_one">
+                        <h3 class="web_h3">php趋势发展</h3>
+                        <ul style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+                            <?php
+                                if(is_array($art8) && !empty($art8)){
+                                    foreach($art8 as $v){
+                                      echo ' <li><a href="?m=mylist&a=wenzhang&id='.$v['id'].'">'.$v['title'].'  <span>['.date("m-d",$v["addtime"]).']</span> </a></li>';
+                                    }
+                                }
+                            ?>
+                        </ul>
+                    </div>
+                    <div class="qianduan_one">
+                        <h3 class="web_h3">Web前端</h3>
+                        <ul style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+                             <?php
+                                if(is_array($art17) && !empty($art17)){
+                                    foreach($art17 as $v){
+                                     echo ' <li><a href="?m=mylist&a=wenzhang&id='.$v['id'].'">'.$v['title'].'  <span>['.date("m-d",$v["addtime"]).']</span> </a></li>';
+                                    }
+                                }
+                            ?>
+                        </ul>
+                    </div>
+                    <div class="qianduan_two">
+                        <h3 class="web_h3">篮球</h3>
+                        <ul style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+                             <?php
+                                if(is_array($art11) && !empty($art11)){
+                                    foreach($art11 as $v){
+                                     echo ' <li><a href="?m=mylist&a=wenzhang&id='.$v['id'].'">'.$v['title'].'  <span>['.date("m-d",$v["addtime"]).']</span> </a></li>';
+                                    }
+                                }
+                            ?>
+                        </ul>
+                    </div>
+                    <div class="qianduan_one">
+                        <h3 class="web_h3">网球</h3>
+                        <ul style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+                            <?php
+                                if(is_array($art12) && !empty($art12)){
+                                    foreach($art12 as $v){
+                                     echo ' <li><a href="?m=mylist&a=wenzhang&id='.$v['id'].'">'.$v['title'].'  <span>['.date("m-d",$v["addtime"]).']</span> </a></li>';
+                                    }
+                                }
+                            ?>
+                        </ul>
+                    </div>
+                    <div class="qianduan_one">
+                        <h3 class="web_h3">羽毛球</h3>
+                        <ul style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+                             <?php
+                                if(is_array($art13) && !empty($art13)){
+                                    foreach($art13 as $v){
+                                     echo ' <li><a href="?m=mylist&a=wenzhang&id='.$v['id'].'">'.$v['title'].'  <span>['.date("m-d",$v["addtime"]).']</span> </a></li>';
+                                    }
+                                }
+                            ?>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clear ceshi_one"></div>
+            </div>
+        <!-- 主题结束-->
+        </div>
+
+        <!-- 主体结束 -->
+    <script type="text/javascript" src="./include/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        //定时器返回值
+        var time=null;
+        //记录当前位子
+        var nexImg = 0;
+        //用于获取轮播图图片个数
+        var imgLength = $(".c-banner .banner ul li").length;
+        //当时动态数据的时候使用,上面那个删除
+        // var imgLength =0;
+        //设置底部第一个按钮样式
+        $(".c-banner .jumpBtn ul li[jumpImg="+nexImg+"]").css("background-color","black");
+
+        //页面加载
+        $(document).ready(function(){
+            // dynamicData();
+            //启动定时器,设置时间为3秒一次
+            time =setInterval(intervalImg,3000);
+        });
+
+        //点击上一张
+        $(".preImg").click(function(){
+            //清楚定时器
+            clearInterval(time);
+            var nowImg = nexImg;
+            nexImg = nexImg-1;
+            console.log(nexImg);
+            if(nexImg<0){
+                nexImg=imgLength-1;
+            }
+            //底部按钮样式设置
+            $(".c-banner .jumpBtn ul li").css("background-color","white");
+            $(".c-banner .jumpBtn ul li[jumpImg="+nexImg+"]").css("background-color","black");
+
+            //将当前图片试用绝对定位,下一张图片试用相对定位
+            $(".c-banner .banner ul img").eq(nowImg).css("position","absolute");
+            $(".c-banner .banner ul img").eq(nexImg).css("position","relative");
+
+            //轮播淡入淡出
+            $(".c-banner .banner ul li").eq(nexImg).css("display","block");
+            $(".c-banner .banner ul li").eq(nexImg).stop().animate({"opacity":1},1000);
+            $(".c-banner .banner ul li").eq(nowImg).stop().animate({"opacity":0},1000,function(){
+                $(".c-banner ul li").eq(nowImg).css("display","none");
+            });
+
+            //启动定时器,设置时间为3秒一次
+            time =setInterval(intervalImg,3000);
+        })
+
+        //点击下一张
+        $(".nexImg").click(function(){
+            clearInterval(time);
+            intervalImg();
+            time =setInterval(intervalImg,3000);
+        })
+
+        //轮播图
+        function intervalImg(){
+            if(nexImg<imgLength-1){
+                nexImg++;
+            }else{
+                nexImg=0;
+            }
+
+            //将当前图片试用绝对定位,下一张图片试用相对定位
+            $(".c-banner .banner ul img").eq(nexImg-1).css("position","absolute");
+            $(".c-banner .banner ul img").eq(nexImg).css("position","relative");
+
+            $(".c-banner .banner ul li").eq(nexImg).css("display","block");
+            $(".c-banner .banner ul li").eq(nexImg).stop().animate({"opacity":1},1000);
+            $(".c-banner .banner ul li").eq(nexImg-1).stop().animate({"opacity":0},1000,function(){
+                $(".c-banner .banner ul li").eq(nexImg-1).css("display","none");
+            });
+            $(".c-banner .jumpBtn ul li").css("background-color","white");
+            $(".c-banner .jumpBtn ul li[jumpImg="+nexImg+"]").css("background-color","black");
+        }
+
+        //轮播图底下按钮
+        //动态数据加载的试用应放在请求成功后执行该代码,否则按钮无法使用
+        $(".c-banner .jumpBtn ul li").each(function(){
+            //为每个按钮定义点击事件
+            $(this).click(function(){
+                clearInterval(time);
+                $(".c-banner .jumpBtn ul li").css("background-color","white");
+                jumpImg = $(this).attr("jumpImg");
+                if(jumpImg!=nexImg){
+                    var after =$(".c-banner .banner ul li").eq(jumpImg);
+                    var befor =$(".c-banner .banner ul li").eq(nexImg);
+
+                    //将当前图片试用绝对定位,下一张图片试用相对定位
+                    $(".c-banner .banner ul img").eq(nexImg).css("position","absolute");
+                    $(".c-banner .banner ul img").eq(jumpImg).css("position","relative");
+
+                    after.css("display","block");
+                    after.stop().animate({"opacity":1},1000);
+                    befor.stop().animate({"opacity":0},1000,function(){
+                        befor.css("display","none");
+                    });
+                    nexImg=jumpImg;
+                }
+                $(this).css("background-color","black");
+                time =setInterval(intervalImg,3000);
+            });
+        });
+
+        //动态数据轮播图
+        //动态数据加载的时候不要直接点击demo.html运行否则可能请求不到本地json数据
+        // function dynamicData(){
+        // 	$.ajax({
+        // 		url:"js/test.json",
+        // 		type:"get",
+        // 		dataType:"json",
+        // 		success:function(data){
+        // 			if(data.code==1){
+        // 				var data = data.data;
+        // 				$.each(data,function(i){
+        // 					$(".c-banner .banner ul").append('<li><img src="'+this.img+'"></li>');
+        // 					$(".c-banner .jumpBtn ul").append('<li jumpImg="'+i+'"></li>')
+        // 				})
+        // 			}
+        // 			//获取图片总数量
+        // 			imgLength = $(".c-banner .banner ul li").length;
+        // 			//为底部按钮定义单击事件
+        // 			$(".c-banner .jumpBtn ul li").each(function(){
+        // 				//为每个按钮定义点击事件
+        // 				$(this).click(function(){
+        // 					clearInterval(time);
+        // 					$(".c-banner .jumpBtn ul li").css("background-color","white");
+        // 					jumpImg = $(this).attr("jumpImg");
+        // 					if(jumpImg!=nexImg){
+        // 						var after =$(".c-banner .banner ul li").eq(jumpImg);
+        // 						var befor =$(".c-banner .banner ul li").eq(nexImg);
+        //
+        // 						//将当前图片试用绝对定位,下一张图片试用相对定位
+        // 						$(".c-banner .banner ul img").eq(nexImg).css("position","absolute");
+        // 						$(".c-banner .banner ul img").eq(jumpImg).css("position","relative");
+        //
+        // 						after.css("display","block");
+        // 						after.stop().animate({"opacity":1},1000);
+        // 						befor.stop().animate({"opacity":0},1000,function(){
+        // 							befor.css("display","none");
+        // 						});
+        // 						nexImg=jumpImg;
+        // 					}
+        // 					$(this).css("background-color","black");
+        // 					time =setInterval(intervalImg,3000);
+        // 				});
+        // 			});
+        // 		}
+        // 	})
+        // }
+    </script>
+<?php
+    include './layout/bottom.html';
+?>
+

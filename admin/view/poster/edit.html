@@ -1,0 +1,85 @@
+<?php
+   include './layout/top.html';
+   include './layout/left.html';
+   include './layout/main_top.html';
+?>
+    <!-- 右侧开始 -->
+    <div id="right">
+<!--        <div class="index_right_01">-->
+<!--            <span class="icon-font">&#xe065;</span>-->
+<!--            <marquee>-->
+<!--                改变命运的方法是，从学习中提高自己改变自己。命运就会随之改变！-->
+<!--            </marquee>-->
+<!--        </div>-->
+        
+        <div class="index_right_03">
+            <h4>修改广告</h4>
+            <form action="?m=poster&a=do_edit" method="post" enctype="multipart/form-data">
+                <table>
+                    <tr>
+
+                        <td>广告名称</td>
+                        <td>
+
+                            <input type="text" name="title" value="<?=$arr1['title']?>">
+                            <input type="hidden" name="id" value="<?=$arr1['id']?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>广告内容：</td>
+                        <td>
+                            <input type="text" name="content" value="<?=$arr1['content']?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>跳转地址:</td>
+                        <td>
+                            <input type="text" name="url" value="<?=$arr1['url']?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>广告图片:</td>
+                        <td>
+                            <input type="file" name="pimg" value="<?=$arr1['pimg']?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>状态</td>
+                        <td>
+                            <select name="status" id="">
+                                <option value="xz">--请选择--</option>
+                                <option value="0">审核中</option>
+                                <option value="1">审核通过</option>
+                                <option value="2">禁用</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>广告位</td>
+                        <td>
+                            <select name="position" id="">
+                                <option value="xz">--请选择--</option>
+                                <option value="0">一号广告位</option>
+                                <option value="1">二号广告位</option>
+                                <option value="2">三号广告位</option>
+                                <option value="3">四号广告位</option>
+                                 <option value="5">五号广告位</option>
+                                <option value="6">六号广告位</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" value="添加">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="index_right_04"></div>
+
+
+    </div>
+    <!-- 右侧结束 -->
+</body>
+</html>

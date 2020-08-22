@@ -1,0 +1,58 @@
+<?php
+    include './layout/top.html';
+?>
+    <!-- banner图放的地方 -->
+  <div class="top_img">
+    <img src="./include/images/ad002.png" class="banner">
+  </div>
+<div class="container">
+    <div class="left">
+        <!-- 文章导航 -->
+    
+       <div class="bar">
+           <a href="">首页-></a>
+           <a href="">列表</a>
+       </div>
+       <!-- 新闻列表 -->
+       <ul class="list">
+
+           <?php
+                    foreach($articles as $k=>$v){
+           echo '<a href="?m=mylist&a=wenzhang&id='.$v['id'].'" class="list-new">
+           <li>
+               <span class="title">'.$v['title'].'</span>
+               <span class="data">'.date('Y-m-d H:i:s ',$v['addtime']).'</span>
+               <p class="list-info">'.strip_tags($v['content']).'</p>
+           </li>
+       </a>';
+           }
+           ?>
+      
+
+       </ul>
+       <center style="margin-top:10px;"><a href=""> 首页 </a><a href=""> 上一页 </a><a href=""> 下一页 </a><a href=""> 尾页 </a>
+                <span> 共计12页 </span><span> 当前1/12页 </span>
+       </center>
+    </div>
+   <div class="all_right">
+       <div class="right_one"><img src="../public/upload/<?=$positionTwo['pimg']?>" alt=""></div>
+       <div class="right_two">
+           <h3>热门标签</h3>
+           <ul>
+               <?php
+                    if(isset($keywords) && is_array($keywords) && !empty($keywords)){
+                        foreach($keywords as $v){
+                            echo '<li><a href="#">'.$v.'</a></li>';
+               }
+               }
+
+
+               ?>
+           </ul>
+       </div>
+   </div>
+    <div style="clear: both"></div>
+</div>
+<?php
+    include './layout/bottom.html';
+?>

@@ -1,0 +1,74 @@
+/*公共设置*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tfoot, thead,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+ul,ol{list-style: none;}
+a{text-decoration:none;}
+a:link{color:#333;}
+a:visited{color:#555;}
+a:hover,a:active,a:focus{color:#333;}
+.clear{clear:both;}
+.block{display: block;}
+@font-face{
+    font-family:'icomoon';
+    src: url('../fonts/icomoon.ttf') format('truetype'),
+    url('../fonts/icomoon.svg#icomoon') format('svg');
+}
+/********???????????*******/
+#hou_left{
+    width:12%;
+    background-color:#DEDEDE;
+    padding:1px;
+    float:left;
+}
+#hou_left h3{
+    display: block;
+    width:100%;
+    height:45px;
+    text-align: center;
+    line-height: 45px;
+    font-size:18px;
+    font-weight:normal;
+    background-color:#eee;
+    margin-bottom:8px;
+}
+#hou_left h4{
+    display: block;
+    width:100%;
+    height:40px;
+    text-align: center;
+    line-height: 40px;
+    font-size:14px;
+    background-color:#eee;
+    margin-bottom:8px;
+}
+#hou_left a{
+    display: block;
+    width:100%;
+    height:40px;
+    text-align: center;
+    line-height: 40px;
+    font-size:14px;
+    background-color:white;
+    margin-bottom:8px;
+    transition:all 0.8s ease;
+}
+#hou_left a:hover{
+     background-color:#FFC825;
+     font-size:15px;
+     border-left:15px solid red;
+     color:#FF6A00;
+     transition:all 0.8s ease;
+ }
+.icon_font{
+    color:#999;
+    font-family:'icomoon';
+    /*float:left;*/
+    line-height:40px;
+    text-align: center;
+    /*position: relative;*/
+    /*left:75px;*/
+    /*margin-left:50px;*/
+}

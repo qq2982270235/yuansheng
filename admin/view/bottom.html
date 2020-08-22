@@ -1,0 +1,46 @@
+<?php
+   include './layout/top.html';
+   include './layout/left.html';
+?>
+<!-- 右侧开始 -->
+<div id="right">
+
+
+    <div class="index_right_03" >
+        <h4>页脚配置</h4>
+        <form action="?m=sys&a=do_add" method="post" enctype="multipart/form-data">
+            <table>
+                <tr>
+                    <td>地址</td>
+                    <td>
+                        <input type="text" name="dizhi" value="<?=DIZHI?>">
+                    </td>
+                </tr>
+                <tr>
+                    <td>日期</td>
+                    <td>
+                        <input type="text" name="riqi" value="<?=RIQI?>">
+                    </td>
+                </tr>
+                <tr>
+                    <td>备案号</td>
+                    <td>
+                        <textarea name="beian"  cols="50" rows="5"><?=BEIAN?></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="保存">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div class="index_right_04"></div>
+
+
+</div>
+<!-- 右侧结束 -->
+</body>
+</html>

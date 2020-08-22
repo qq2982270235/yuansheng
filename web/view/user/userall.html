@@ -1,0 +1,77 @@
+<?php
+    include './layout/top.html';
+?>
+
+    <div class="user">
+        <div class="user_top">
+            <div class="user_top_left">
+                <div class="user_touxiang">
+                    <img src="../public/upload/thumb/s_<?=$userarr['pic']?>" alt="">
+                </div>
+                <div class="userdata">
+                    <span>欢迎：<?=$userarr['username']?></span><br/>
+                    <span>账户名：<?=$userarr['username']?> 姓名：<?=$userarr['name']?></span>
+                </div>
+            </div>
+            <div class="user_top_right">
+                <div class="user_ziliao">
+                    <a href="">修改资料-></a>
+                </div>
+            </div>
+        </div>
+        <div class="user_center">
+            <h3 style="text-align: center">个人资料管理</h3>
+            <table align="center">
+                <form action="?m=userall&a=edit" method="post" enctype="multipart/form-data">
+                    <tr>
+                        <td>用户名：</td>
+                        <td>
+                            <input type="text" name="username" value="<?=$userarr['username']?>">
+                            <input type="hidden" name="id" value="<?=$userarr['ID']?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>权限：</td>
+                        <td><input type="text" disabled name="level" value="<?=$levelone[$leveltwo]?>"></td>
+                    </tr>
+                    <tr>
+                        <td>真实姓名：</td>
+                        <td><input type="text" name="name" value="<?=$userarr['name']?>"></td>
+                    </tr>
+                    <tr>
+                        <td>手机号：</td>
+                        <td><input type="text" name="phone" value="<?=$userarr['phone']?>"></td>
+                    </tr>
+                    <tr>
+                        <td>性别：</td>
+                        <td>
+                            <input type="radio" name="sex" value="0" <?=$woman?> >女
+                            <input type="radio" name="sex" value="1" <?=$man?> >男
+                            <input type="radio" name="sex" value="2" <?=$baomi?> >保密
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>年龄：</td>
+                        <td><input type="text" name="age" value="<?=$userarr['age']?>"></td>
+                    </tr>
+                    <tr>
+                        <td>头像：</td>
+                        <td><input type="file" name="pic" value="<?=$userarr['pic']?>"></td>
+                    </tr>
+                    <tr>
+                        <td>注册时间：</td>
+                        <td><input type="text" disabled name="username" value="<?=date('Y-m-d H:i:s',$userarr['addtime'])?>"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" value="修改"></td>
+                    </tr>
+                </form>
+            </table>
+
+
+        </div>
+    </div>
+
+<?php
+    include './layout/bottom.html';
+?>

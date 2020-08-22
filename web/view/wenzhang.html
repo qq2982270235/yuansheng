@@ -1,0 +1,89 @@
+<?php
+    include './layout/top.html';
+    $id=$_GET['id'];
+
+?>
+    <div id="wen_max">
+        <div id="max_one">
+            <div class="all_left">
+                <div class="left_wenzhang">
+                    <h3 class="one_h3">
+                        <a href="#">首页</a>
+                        ->
+                        <a href="#">列表</a>
+                        ->
+                        <a href="#">文章</a>
+                    </h3>
+                    <h3 class="two_h3">
+                        <?php
+                            foreach($articles as $v){
+                                if($v['id'] == $id){
+                                    echo '<span class="zuozhe">作者：大帅帅 发布时间：'.date('Y-m-d H-i-s',$v['addtime']).' 浏览次數：59</span>';
+                                    echo '<p>'.$v['content'].'</p >';
+                                }
+                            }
+                            //$articles[$id]['title']
+                        ?>
+                    </h3>
+
+                    <div class="ping_one">
+                        <form action="?m=mylist&a=pinlun&id=<?php echo $id;?>" method="POST">
+                            <textarea name="pinglun" id="" cols="30" rows="10"></textarea>
+                            <input type="submit" value="立即评论">
+                        </form>
+                    </div>
+                    <div class="ping_two">
+                        <ul>
+
+
+                            
+                            
+                            <?php
+                                if(is_array($pinlun) && !empty($pinlun)){
+                              
+                                    foreach($pinlun as $v){
+                                       
+                                          echo '<li><span class="sp_one">匿名用户:</span><br/><span  class="sp_two">'.$v["content"].'</span></li>';
+                                            
+                                      
+                                    }
+                                }else{
+                                    echo '暂时没有评论，快抢沙发。';
+                                }
+                            ?>
+
+
+                        </ul>
+
+                    </div>
+                    <center style="margin-top:10px;"><a href=""> 首页 </a>
+       <a href="?m=mylist&a=wenzhang&id=<?=$_GET['id']?>&page=<?=$prePage?>">上一页</a>
+        <a href="?m=mylist&a=wenzhang&id=<?=$_GET['id']?>&page=<?=$nextPage?>">下一页</a>
+         <a href="?m=mylist&a=wenzhang&id=<?=$_GET['id']?>&page=<?=$pageAll?>">尾页</a>
+                <span> 共计12页 </span><span> 当前1/12页 </span>
+       </center>
+                </div>
+            </div>
+            <div class="all_right">
+                <div class="right_one"><img src="./include/images/1.jpg" alt=""></div>
+                <div class="right_two">
+                    <h3>热门标签</h3>
+                    <ul>
+                        <?php
+                    if(isset($keywords) && is_array($keywords) && !empty($keywords)){
+                        foreach($keywords as $v){
+                            echo '<li><a href="#">'.$v.'</a></li>';
+                        }
+                        }
+
+
+                        ?>
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+<?php
+    include './layout/bottom.html';
+?>

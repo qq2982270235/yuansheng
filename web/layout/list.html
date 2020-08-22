@@ -1,0 +1,111 @@
+<?php
+    include 'top.html';
+?>
+<div class="container">
+    <div class="left">
+        <!-- 文章导航 -->
+		
+       <div class="bar">
+           <a href="">首页-></a>
+           <a href="">列表</a>
+       </div>
+       <!-- 新闻列表 -->
+       <ul class="list">
+           <a href="" class="list-new">
+             <li>
+                <span class="title">愉快的学习能改变你的未来</span>
+                <span class="data">发布日期:2020-05-30</span>
+                <p class="list-info">如今是一个科技的时代，只能努力才不被淘汰，科技的大门在敞开，快跟我一起努力吧！</p>
+             </li>
+           </a>
+           <?php
+                    foreach($article as $k=>$v){
+                       echo '<a href="" class="list-new">
+               <li>
+                   <span class="title">'.$v['title'].'</span>
+                   <span class="data">发布日期:2020-05-30</span>
+                   <p class="list-info">如今是一个科技的时代，只能努力才不被淘汰，科技的大门在敞开，快跟我一起努力吧！</p>
+               </li>
+           </a>';
+                        }
+            ?>
+
+
+
+      
+          <a href="" class="list-new">
+            <li>
+               <span class="title">愉快的学习能改变你的未来</span>
+               <span class="data">发布日期:2020-05-30</span>
+               <p class="list-info">如今是一个科技的时代，只能努力才不被淘汰，科技的大门在敞开，快跟我一起努力吧！</p>
+            </li>
+          </a>
+      
+          <a href="" class="list-new">
+            <li>
+               <span class="title">愉快的学习能改变你的未来</span>
+               <span class="data">发布日期:2020-05-30</span>
+               <p class="list-info">如今是一个科技的时代，只能努力才不被淘汰，科技的大门在敞开，快跟我一起努力吧！</p>
+            </li>
+          </a>
+      
+          <a href="" class="list-new">
+            <li>
+               <span class="title">愉快的学习能改变你的未来</span>
+               <span class="data">发布日期:2020-05-30</span>
+               <p class="list-info">如今是一个科技的时代，只能努力才不被淘汰，科技的大门在敞开，快跟我一起努力吧！</p>
+            </li>
+          </a>
+      
+          <a href="" class="list-new">
+            <li>
+               <span class="title">愉快的学习能改变你的未来</span>
+               <span class="data">发布日期:2020-05-30</span>
+               <p class="list-info">如今是一个科技的时代，只能努力才不被淘汰，科技的大门在敞开，快跟我一起努力吧！</p>
+            </li>
+          </a>
+      
+          <a href="" class="list-new">
+            <li>
+               <span class="title">愉快的学习能改变你的未来</span>
+               <span class="data">发布日期:2020-05-30</span>
+               <p class="list-info">如今是一个科技的时代，只能努力才不被淘汰，科技的大门在敞开，快跟我一起努力吧！</p>
+            </li>
+          </a>
+      
+          <a href="" class="list-new">
+            <li>
+               <span class="title">愉快的学习能改变你的未来</span>
+               <span class="data">发布日期:2020-05-30</span>
+               <p class="list-info">如今是一个科技的时代，只能努力才不被淘汰，科技的大门在敞开，快跟我一起努力吧！</p>
+            </li>
+          </a>
+      
+     
+       </ul>
+       <center><a href="">首页</a><a href="">上一页</a><a href="">下一页</a><a href="">尾页</a>
+                <span>共计12页</span><span>当前1/12页</span>
+       </center>
+    </div>
+   <div class="all_right">
+       <div class="right_one"><img src="./include/images/1.jpg" alt=""></div>
+       <div class="right_two">
+           <h3>热门标签</h3>
+           <ul>
+               <?php
+                    if(isset($keywords) && is_array($keywords) && !empty($keywords)){
+                        foreach($keywords as $v){
+                            echo '<li><a href="#">'.$v.'</a></li>';
+               }
+               }
+
+
+               ?>
+           </ul>
+       </div>
+   </div>
+</div>
+
+<?php
+        include './layout/bottom.html';
+        ?>

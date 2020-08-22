@@ -1,0 +1,61 @@
+/******个人中心总体****/
+.user{
+    width:1200px;
+    height:800px;
+    margin:0px auto;
+    background-color: #f8f8f8;
+}
+/******个人中心上部分****/
+.user_top{
+    width:100%;
+    height:150px;
+}
+/*******左侧******/
+.user_top_left{
+    width:500px;
+    height:100%;
+    float:left;
+    margin-left:80px;
+}
+.user_touxiang img{
+    width:100px;
+    height:100px;
+    float:left;
+    border-radius: 50%;
+    margin-top:25px;
+}
+.userdata{
+    width:380px;
+    height:120px;
+    margin-top:24px;
+    float:left;
+}
+.userdata span{
+    font-size:18px;
+    line-height: 50px;
+    margin-left:30px;
+}
+/*****右侧******/
+.user_top_right{
+    width:500px;
+    height:100%;
+    float:right;
+    margin-right:80px;
+}
+.user_ziliao{
+    width:180px;
+    height:50px;
+    background-color: #5597D7;
+    float:right;
+    margin-top: 50px;
+    border-radius: 8px;
+    line-height: 50px;
+    text-align: center;
+}
+/******个人中心内容****/
+.user_center{
+     width:80%;
+     height:600px;
+     background-color: #fff;
+     margin: 10px auto;
+ }

@@ -1,0 +1,105 @@
+<?php
+   include './layout/top.html';
+   include './layout/left.html';
+   include './layout/main_top.html';
+?>
+<style>
+    .bj{
+        /*border:1px solid red;*/
+        padding: 0px 5px;
+    }
+    .bj>span{
+        float:left;
+    }
+    .bj>a{
+        float:right;
+        visibility: hidden;
+    }
+    .bj:hover>a{
+        visibility: visible;
+    }
+</style>
+<div id="right">
+<!--    <div class="index_right_01">-->
+<!--        <span class="icon-font">&#xe065;</span>-->
+<!--        <marquee>-->
+<!--            改变命运的方法是，从学习中提高自己改变自己。命运就会随之改变！-->
+<!--        </marquee>-->
+<!--    </div>-->
+<!--    <div class="index_right_02">-->
+<!--        <h4>快捷操作</h4>-->
+<!--        <ul>-->
+<!--            <li><a href="#" class="icon-font"> &#xe005; 用户增加</a></li>-->
+<!--            <li><a href="#" class="icon-font"> &#xe005; 文章增加</a></li>-->
+<!--            <li><a href="#" class="icon-font"> &#xe005; 栏目增加</a></li>-->
+<!--            <li><a href="#" class="icon-font"> &#xe005; 广告增加</a></li>-->
+<!--            <li><a href="#" class="icon-font"> &#xe005; 链接增加</a></li>-->
+<!--        </ul>-->
+<!--    </div>-->
+    <div class="index_right_03">
+        <table border="1" align="center" width="800">
+            <caption><h2>栏目列表</h2></caption>
+            <tr>
+                <td colspan="9">
+<!--                    <form action="" method="get">-->
+<!--                        <input type="hidden" name="m" value="mylink">-->
+<!--                        <input type="hidden" name="a" value="show">-->
+<!--                        <input type="text" name="webname" placeholder="<?php echo isset($_GET['webname'])?$_GET['webname']:'网站名称'?>">-->
+<!--                        <select name="status" id="">-->
+<!--                            <option value="xz">&#45;&#45;请选择&#45;&#45;</option>-->
+<!--                            <option value="0">审核中</option>-->
+<!--                            <option value="1">审核通过</option>-->
+<!--                            <option value="2">禁用</option>-->
+<!--                        </select>-->
+<!--                        <select name="addtime" id="">-->
+<!--                            <option value="xz">&#45;&#45;请选择&#45;&#45;</option>-->
+<!--                            <option value="-1 day">一天</option>-->
+<!--                            <option value="-3 day">三天</option>-->
+<!--                            <option value="-1 week">一周</option>-->
+<!--                        </select>-->
+<!--                        <input type="submit" value="查询">-->
+<!--                    </form>-->
+                </td>
+            </tr>
+            <tr>
+                <th>编号</th>
+                <th>分类名称</th>
+                <th>分类描述</th>
+                <th>父ID</th>
+                <th>PATH路径</th>
+                <th>操作</th>
+            </tr>
+            <?php
+                if(isset($arr)){
+                    if(is_array($arr) && !empty($arr)){
+                        foreach($arr as $v){
+                            $num = substr_count($v['path'],',');
+                            $nbsp = str_repeat('&nbsp;',($num -1) * 4);
+                            echo '<tr>';
+                                echo '<td>'.$v['id'].'</td>';
+                                echo '<td style="display: flex;justify-content: left;align-items: center">'.$nbsp.$v['name'].'</td>';
+                                echo '<td>'.$v['description'].'</td>';
+                                echo '<td>'.$v['pid'].'</td>';
+                                echo '<td>'.$v['path'].'</td>';
+                                echo '<td><a href="?m=mylink&a=del&id='.$v['id'].'">删除</a>
+                                    <a href="?m=category&a=edit&id='.$v['id'].'">修改</a>
+                                </td>';
+                            echo '</tr>';
+                        }
+                    }else{
+                        echo '<tr><td colspan="8">没有数据</td></tr>';
+                    }
+                }
+            ?>
+
+        </table>
+    </div>
+    <div class="index_right_04"></div>
+
+
+</div>
+<!-- 右侧结束 -->
+</body>
+</html>
+
+

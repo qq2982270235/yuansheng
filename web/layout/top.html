@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<!--    <link href="./include/css/style.css" rel="stylesheet">-->
+<!--    <link href="./include/css/stylee.css" rel="stylesheet">-->
+<!--    <link href="./include/css/css.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="./include/css/css.css" type="text/css">
+    <link rel="stylesheet" href="./include/csss/style.css" type="text/css">
+    <link rel="stylesheet" href="./include/csss/main.css" type="text/css">
+    <link rel="stylesheet" href="./include/csss/lunbo.css" type="text/css">
+    <link rel="stylesheet" href="./include/csss/wenzhang.css" type="text/css">
+    <link rel="stylesheet" href="./include/csss/wenzhang.css" type="text/css">
+    <link rel="stylesheet" href="./include/csss/userall.css" type="text/css">
+<!--    <link rel="stylesheet" href="./include/css2/css.css" type="text/css">-->
+</head>
+<body>
+<!-- 页头开始-->
+    <div id="index_top">
+        <div class="index_top">
+            <ul>
+                <?php
+                    if(isset($_SESSION['user']['islogin']) && $_SESSION['user']['islogin']==true){
+                        echo '<li><a>亲爱的会员</a></li>
+                <li class="erjitwo"><a href="">'. $_SESSION['user']['username'] .'
+
+                        <li><a href="?m=userall&a=show">个人中心</a></li>
+
+                </a></li>
+                <li><a>欢迎回来</a></li> ';
+                echo '<a href="?m=login&a=outlog"> 退出登录 </a>';
+                }else{
+                echo '<a href="?m=login&a=show"> 登录 </a>
+                <a href="?m=regis&a=show"> 注册 </a>';
+                }
+                ?>
+            </ul>
+            <div class="top_two">
+                <ul class="top_zong">
+                    <li>
+                        <ul class="top_left">
+                            <li><span><?=TITLE?></span></li>
+                            <li><img alt="" style="height: 50px;" src="../public/logo/<?=LOGO?>"></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <sapn><?=SLOGEN?></sapn><br/>
+                        <sapn><?=SLOE?></sapn><br/>
+
+                    </li>
+                    <li>
+                        <form action="?m=index&a=search">
+                            <input type="text" name="key">
+                            <input type="hidden" name="m" value="index">
+                            <input type="hidden" name="a" value="search">
+                            <input name="" type="submit" value="搜索">
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 页头结束-->
+        <!-- 导航开始-->
+        <div id="top_nav">
+            <div class="nav_top">
+                <ul>
+<!--                    <li>-->
+<!--                        <a href="">首页</a>-->
+<!--                        <ul class="erji">-->
+<!--                            <li><a href="">首页</a></li>-->
+<!--                            <li><a href="">首页</a></li>-->
+<!--                        </ul>-->
+<!--                    </li>-->
+                    <li><a href="/web">首页</a></li>
+
+                        <?php
+
+                if(isset($types) && is_array($types) && !empty($types)){
+
+                             foreach($types as $v){
+                             if($v['pid'] == 0){
+                             echo '<li>
+                        <a href="javascript:;">'.$v['name'].'</a >
+                        <ul class="erji">';
+                            foreach($childTypes as $childVal){
+                            if($v['id'] == $childVal['pid']){
+                            echo '<li><a href="?m=mylist&a=show&id='.$childVal['id'].'">'.$childVal['name'].'</a ></li>';
+                            }
+                            }
+                            echo ' </ul>
+                    </li>';
+                    }
+                    }
+                    }
+                    ?>
+
+                </ul>
+            </div>
+        </div>
+    </div>

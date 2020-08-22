@@ -1,0 +1,138 @@
+<?php
+   include './layout/top.html';
+   include './layout/left.html';
+   include './layout/main_top.html';
+?>
+    <!-- 右侧开始 -->
+    <div id="right">
+<!--        <div class="index_right_01">-->
+<!--            <span class="icon-font">&#xe065;</span>-->
+<!--            <marquee>-->
+<!--                改变命运的方法是，从学习中提高自己改变自己。命运就会随之改变！-->
+<!--            </marquee>-->
+<!--        </div>-->
+        
+        <div class="index_right_03">
+            <h4>添加内容</h4>
+            <form action="?m=content&a=do_add" id="form-article" method="post" enctype="multipart/form-data">
+                <table>
+                    <tr>
+                        <td>选择分类</td>
+                        <td>
+                            <select name="catid" id="">
+                                <option value="xz">--作为一级栏目--</option>
+                                <?php
+                                    if(isset($categorys)){
+                                        if(is_array($categorys) && !empty($categorys)){
+                                            foreach($categorys as $v){
+                                                $num = substr_count($v['path'],',');
+                                                $nbsp = str_repeat('&nbsp;',($num-1)*3);
+                                                if($v['pid'] == 0){
+                                                    $disabled = 'disabled';
+                                                }else{
+                                                    $disabled = '';
+                                                }
+                                                echo '<option '.$disabled.' value="'.$v['id'].'">'.$nbsp.$v['name'].'</option>';
+                                }
+                                }
+                                }
+
+                                ?>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>选择用户</td>
+                        <td>
+                            <select name="uid" id="">
+                                <option value="xz">--请选择--</option>
+                                <?php
+                                    if(isset($users)){
+                                        if(is_array($users) && !empty($users)){
+                                            foreach($users as $v){
+                                                echo '<option value="'.$v['ID'].'">'.$v['username'].'</option>';
+                                            }
+                                        }
+                                    }
+
+                                ?>
+
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>标题</td>
+                        <td>
+                            <input type="text" name="title" required value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>来源：</td>
+                        <td>
+                            <input type="text" name="comeform" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>简介:</td>
+                        <td>
+                            <input type="text" name="summary" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>关键字:</td>
+                        <td>
+                            <input type="text" name="keywords" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <script id="editor" type="text/plain" style="width:1024px;height:500px;"></script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>状态</td>
+                        <td>
+                            <select name="audit" id="">
+                                <option value="xz">--请选择--</option>
+                                <option value="0">审核中</option>
+                                <option value="1">审核通过</option>
+                                <option value="2">禁用</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>是否推荐</td>
+                        <td>
+                            <select name="recomment" id="">
+                                <option value="xz">--请选择--</option>
+                                <option value="0">是</option>
+                                <option value="1">不是</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>是否评论</td>
+                        <td>
+                            <select name="allow" id="">
+                                <option value="xz">--请选择--</option>
+                                <option value="0">是</option>
+                                <option value="1">不是</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" value="添加">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="index_right_04"></div>
+
+
+    </div>
+<script src="./include/js/bianjiqi.js"></script>
+    <!-- 右侧结束 -->
+</body>
+</html>

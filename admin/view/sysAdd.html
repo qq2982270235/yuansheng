@@ -1,0 +1,69 @@
+<?php
+   include './layout/top.html';
+   include './layout/left.html';
+?>
+    <!-- 右侧开始 -->
+    <div id="right">
+<!--        <div class="index_right_01">-->
+<!--            <span class="icon-font">&#xe065;</span>-->
+<!--            <marquee>-->
+<!--                改变命运的方法是，从学习中提高自己改变自己。命运就会随之改变！-->
+<!--            </marquee>-->
+<!--        </div>-->
+        
+        <div class="index_right_03">
+            <h4>网站配置</h4>
+            <form action="?m=sys&a=do_add" method="post" enctype="multipart/form-data">
+                <table>
+                    <tr>
+                        <td>网站标题</td>
+                        <td>
+                            <input type="text" name="title" value="<?=TITLE?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>网站关键字</td>
+                        <td>
+                            <input type="text" name="keywords" value="<?=KEYWORDS?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>网站描述</td>
+                        <td>
+                            <textarea name="description"  cols="50" rows="5"><?=DESCRIPTION?></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>logo</td>
+                        <td>
+                            <input type="file" name="logo" id="">
+                            <img src="../public/logo/thumb/s_<?=LOGO?>" alt="logo图片占位">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SLOGEN</td>
+                        <td>
+                            <input type="text" name="slogen" value="<?=SLOGEN?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>英文SLOGEN</td>
+                        <td>
+                            <input type="text" name="sloe" value="<?=SLOE?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" value="保存">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="index_right_04"></div>
+
+
+    </div>
+    <!-- 右侧结束 -->
+</body>
+</html>

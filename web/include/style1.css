@@ -1,0 +1,214 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box; 
+}
+body {
+  overflow-x: hidden;
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  font-size: 14px;
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  color: rgb(253,182,153);
+}
+.container {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 1280px;
+}
+.header{
+  background-color: #E7F5FE;
+}
+.login{
+  float: right;
+  height: 30px;
+  line-height: 30px;
+}
+.logo{
+  width: 350px;
+}
+.login a{
+  margin: 0 15px;
+}
+.info{
+  width: 400px;
+  position: absolute;
+  left: 350px;
+  top:45px;
+  line-height: 1.5;
+  border-left: 1px solid #999;
+  padding-left: 50px;
+}
+.search{
+  position: absolute;
+  left: 800px;
+  top:60px
+}
+.search-input{
+  width: 400px;
+  height: 34px;
+  color: #999;
+  border: 2px solid #999;
+}
+.search-button{
+    display: inline-block;
+    height: 34px;
+    width: 60px;
+    border: 1px solid #999;
+    background-color: #EDF4F4;
+    vertical-align: top;
+    cursor: pointer;
+    transition: .2s;
+}
+ul li{
+  list-style: none;
+}
+.nav{
+  position: absolute;
+  height: 30px;
+  left: 30px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.nav li{
+  float: left;
+  padding: 0 80px;
+  background-color: #458FD9;
+  line-height: 30px;
+}
+.nav li a{
+  color: #fff;
+}
+.nav li a:hover{
+  color: rgb(253,182,153);
+}
+.nav-plus{
+  position: absolute;
+  top:30px;
+  height: 30px;
+  left: 30px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+ 
+}
+.nav-plus li{
+  float: left;
+  padding: 0 72px;
+  background-color: #eeeeee;
+  line-height: 30px;
+}
+.nav-plus li a{
+  color: #333;
+}
+.nav-plus li a:hover{
+  color: rgb(253,182,153);
+}
+.bar{
+  line-height: 30px;
+  height: 30px;
+  border: 1px solid #999;
+  padding: 0 30px;
+}
+.list li{
+  padding: 30px 30px 55px 10px;
+  border: 1px solid #F2F2F2;;
+}
+.banner{
+  margin-top: 60px;
+}
+.title{
+  font-size: 16px;
+  font-weight: 800;
+  margin-right: 15px;
+}
+.list-info{
+  line-height: 50px;
+  font-size: 16px;
+  margin-left: 30px;
+}
+.left{
+  float: left;
+  width: 800px;
+}
+.right{
+  float: right;
+  width: 400px;
+}
+.card{
+  width: 400px;
+  height: 90px;
+  border: 1px solid #333;
+}
+.card-plus{
+  width: 400px;
+  margin-top: 15px;
+}
+.card-title{
+  color: #458FD9;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 30px;
+  background-color: #E9F4FA;
+  padding: 0 15px;
+}
+.tag li{
+  float: left;
+  padding: 4px  40px;
+}
+.new{
+  padding: 0 15px;
+}
+.new li{
+  list-style: disc;
+}
+center a span{
+  margin: 0 15px
+}
+.nav-footer li{
+   float: left;
+   margin: 0 3px;
+   width: 170px;
+   border: solid 1px #999;
+   text-align: center;
+}
+.footer{
+  margin-top: 60px;
+}
+.essay{
+  text-indent: 2em;
+  line-height: 30px;
+}
+.comment li{
+    border-bottom: 1px double gray;
+    padding: 15px;
+}
+.man{
+  margin-left: 80px;
+}
+.comment-data{
+   float: right;
+}
+.comment-info{
+  margin-left: 120px;
+}
+.list a li:hover{
+  background-color: #f2f2f2;
+  color: rgb(253,182,153)
+}
+.biao1 button{
+	width:80px;
+	height: 30px;
+	color: #E7F5FE;
+	background-color: #458FD9;
+}

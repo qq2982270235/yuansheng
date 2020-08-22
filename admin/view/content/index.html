@@ -1,0 +1,127 @@
+<?php
+   include './layout/top.html';
+   include './layout/left.html';
+   include './layout/main_top.html';
+?>
+<style>
+    .bj{
+        /*border:1px solid red;*/
+        padding: 0px 5px;
+    }
+    .bj>span{
+        float:left;
+    }
+    .bj>a{
+        float:right;
+        visibility: hidden;
+    }
+    .bj:hover>a{
+        visibility: visible;
+    }
+</style>
+<div id="right">
+<!--    <div class="index_right_01">-->
+<!--        <span class="icon-font">&#xe065;</span>-->
+<!--        <marquee>-->
+<!--            改变命运的方法是，从学习中提高自己改变自己。命运就会随之改变！-->
+<!--        </marquee>-->
+<!--    </div>-->
+<!--    <div class="index_right_02">-->
+<!--        <h4>快捷操作</h4>-->
+<!--        <ul>-->
+<!--            <li><a href="#" class="icon-font"> &#xe005; 用户增加</a></li>-->
+<!--            <li><a href="#" class="icon-font"> &#xe005; 文章增加</a></li>-->
+<!--            <li><a href="#" class="icon-font"> &#xe005; 栏目增加</a></li>-->
+<!--            <li><a href="#" class="icon-font"> &#xe005; 广告增加</a></li>-->
+<!--            <li><a href="#" class="icon-font"> &#xe005; 链接增加</a></li>-->
+<!--        </ul>-->
+<!--    </div>-->
+    <div class="index_right_03">
+        <table border="1" align="center" width="800">
+            <caption><h2>文章数据管理</h2></caption>
+            <tr>
+                <td colspan="9">
+                    <form action="" method="get">
+                        <input type="hidden" name="m" value="mylink">
+                        <input type="hidden" name="a" value="show">
+                        <input type="text" name="webname" placeholder="<?php echo isset($_GET['webname'])?$_GET['webname']:'网站名称'?>">
+                        <select name="status" id="">
+                            <option value="xz">--请选择--</option>
+                            <option value="0">审核中</option>
+                            <option value="1">审核通过</option>
+                            <option value="2">禁用</option>
+                        </select>
+                        <select name="addtime" id="">
+                            <option value="xz">--请选择--</option>
+                            <option value="-1 day">一天</option>
+                            <option value="-3 day">三天</option>
+                            <option value="-1 week">一周</option>
+                        </select>
+                        <input type="submit" value="查询">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <th>编号</th>
+                <th>标题</th>
+                <th>来源</th>
+                <th>发稿人</th>
+                <th>文章类别</th>
+                <th>文章状态</th>
+                <th>是否评论</th>
+                <th>是否推荐</th>
+                <th>添加时间</th>
+                <th>操作</th>
+            </tr>
+            <?php
+                if(is_array($arr) && !empty($arr)){
+                    foreach($arr as $v){
+                        echo '<tr>';
+                            echo '<td>'.$v['id'].'</td>';
+                            echo '<td style="display: flex;justify-content: center;align-items: center">'.$v['title'].'</td>';
+                            echo '<td>'.$v['comeform'].'</td>';
+                            echo '<td>'.$v['username'].'</td>';
+                            echo '<td>'.$v['name'].'</td>';
+            if($v['audit'] == 0){
+                echo '<td class="bj">
+                <span>'.$status[$v['audit']].'</span>
+                <a href="?m=content&a=editStatus&id='.$v['id'].'">审核通过</a>
+            </td>';
+            }else{
+                echo '<td>'.$status[$v['audit']].'</td>';
+            }
+                            echo '<td>'.$v['allow'].'</td>';
+                            echo '<td>'.$v['recomment'].'</td>';
+                            echo '<td>'.date('Y-m-d H:i:s',$v['addtime']).'</td>';
+                            echo '<td><a href="?m=content&a=del&id='.$v['id'].'">删除</a>
+                                <a href="?m=content&a=edit&id='.$v['id'].'">修改</a>
+                            </td>';
+                        echo '</tr>';
+                    }
+                }else{
+                    echo '<tr><td colspan="8">没有数据</td></tr>';
+                }
+            ?>
+            <tr>
+<!--                <td style="text-align: right" colspan="9">-->
+
+<!-- <span>共<?=$total?>条/当前<?=$dpage?>页/共<?=$pageAll?>页</span>-->
+<!--                    <a href="?m=mylink&a=show&page=1<?=$url?>">首页</a>-->
+<!--                    <a href="?m=mylink&a=show&page=<?=$prePage?><?=$url?>">上一页</a>-->
+<!--                    <a href="?m=mylink&a=show&page=<?=$nextPage?><?=$url?>">下一页</a>-->
+<!--                    <a href="?m=mylink&a=show&page=<?=$pageAll?><?=$url?>">尾页</a>-->
+
+
+<!--                </td>-->
+            </tr>
+        </table>
+    </div>
+    <div class="index_right_04"></div>
+
+
+</div>
+<!-- 右侧结束 -->
+</body>
+</html>
+
+

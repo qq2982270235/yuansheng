@@ -1,0 +1,87 @@
+<?php
+    include './layout/top.html';
+    include './layout/left.html';
+    include './layout/main_top.html';
+?>
+<div id="right">
+
+<!--    <div class="index_right_02">-->
+<!--        <h4>快捷操作</h4>-->
+<!--        <ul>-->
+<!--            <li><a href="#" class="icon-font"> &#xe005; 用户增加</a></li>-->
+<!--            <li><a href="#" class="icon-font"> &#xe005; 文章增加</a></li>-->
+<!--            <li><a href="#" class="icon-font"> &#xe005; 栏目增加</a></li>-->
+<!--            <li><a href="#" class="icon-font"> &#xe005; 广告增加</a></li>-->
+<!--            <li><a href="#" class="icon-font"> &#xe005; 链接增加</a></li>-->
+<!--        </ul>-->
+
+
+
+    </div>
+    <div class="index_right_03">
+        <table border="1" align="center" width="800">
+            <caption><h2>用户列表</h2></caption>
+            <tr>
+                <td colspan="9">
+                    <form action="" metnod="get">
+                        <input type="hidden" name="m" value="user">
+                        <input type="hidden" name="a" value="userlist">
+                        <input type="text" name="select" id="">
+                        <input type="submit" value="查询">
+                        <input type="submit" name="asc" value="倒序">
+                    </form>
+                </td>
+
+            </tr>
+            <tr>
+                <th>编号</th>
+                <th>头像</th>
+                <th>用户名</th>
+                <th>真实姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+                <th>权限</th>
+                <th>注册时间</th>
+                <th>操作</th>
+            </tr>
+
+            <?php
+                if(is_array($arr) && !empty($arr)){
+                    foreach($arr as $v){
+                        echo '<tr>';
+                            echo '<td>'.$v['ID'].'</td>';
+                            echo '<td style="display: flex;justify-content: center;align-items: center"><img align="center" src="../public/upload/thumb/s_'.$v['pic'].'" alt=""></td>';
+                            echo '<td>'.$v['username'].'</td>';
+                            echo '<td>'.$v['name'].'</td>';
+                            echo '<td>'.$sex[$v['sex']].'</td>';
+                            echo '<td>'.$v['age'].'</td>';
+                            echo '<td>'.$level[$v['level']].'</td>';
+                            echo '<td>'.date('Y-m-d H:i:s',$v['addtime']).'</td>';
+                            echo '<td><a href="./index.php?m=user&a=del&id='.$v['ID'].'">删除</a>
+                                <a href="./index.php?m=user&a=edit&id='.$v['ID'].'">修改</a>
+                            </td>';
+                        echo '</tr>';
+                    }
+                }else{
+                    echo '<tr><td colspan="8">没有数据</td></tr>';
+                }
+            ?>
+            <tr>
+                <td style="text-align: right" colspan="9">
+                    <span>共<?=$total?>条/当前<?=$dpage?>页/共<?=$pageAll?>页</span>
+                    <a href="?m=user&a=userList&page=1">首页</a>
+                    <a href="?m=user&a=userList&page=<?=$prePage?>">上一页</a>
+                    <a href="?m=user&a=userList&page=<?=$nextPage?>">下一页</a>
+                    <a href="?m=user&a=userList&page=<?=$pageAll?>">尾页</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="index_right_04"></div>
+
+
+</div>
+<!-- 右侧结束 -->
+</body>
+</html>
+

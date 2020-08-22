@@ -1,0 +1,136 @@
+/*公共设置*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;                                                      /*外边距为0*/
+  padding: 0;                                                     /*内边距为0*/
+  border: 0;                                                      /*边框线粗度为0*/
+}
+
+ul,ol{list-style:none;}                                                               /*清空ul和ol的列表样式*/
+
+a{text-decoration:none;}                                                            /*取消超链接默认下划线*/
+a:link{color:#000;}                                                                 /*未激活样式*/
+a:visited{color:#333;}                                                              /*激活后样式*/
+a:hover,a:active,a:focus{
+  color: rgb(253,182,153);
+  text-decoration:none;
+  text-shadow:3px 3px 8px #ccc/*鼠标移入时，激活时，选中时样式*/
+}
+a:hover{
+  color: rgb(253,182,153);
+  transition-duration:0.3s;
+}
+.nav_top a:hover{
+  color:white;
+  transition-duration:0.4s;
+}
+.nav_bottom a:hover{
+  color:#f3f4f5;
+  transition-duration:0.4s;
+}
+.clear{clear:both;}
+/***********************************/
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 1200px;
+}
+.left{
+  float: left;
+  width: 800px;
+}
+.bar{
+  line-height: 30px;
+  height: 30px;
+  border: 1px solid #999;
+  padding: 0 30px;
+}
+/*右半边*/
+.main_right{
+  width:375px;height:540px;
+  float:right;
+  margin-top:5px;
+  background-color:#ccc;
+}
+.right_top{
+  width:370px;
+  height:370px;
+  float:right;
+}
+.right_top img{
+  width:370px;
+}
+.right_bottom{
+  width:370px;
+  height:160px;
+  float:right;
+  margin-top:10px;
+  background-color: white;
+}
+.right_bottom h3{
+  text-align: center;
+  line-height: 40px;
+  height:40px;
+  background-color:#E7F5FF;
+}
+.right_bottom li{
+  width:123px;
+  height:60px;
+  float:left;
+  text-align: center;
+  line-height:80px;
+}
+/***********************************************************/
+.zhiming_right{
+  width:370px;
+  height:410px;
+  float:right;
+  background-color: white;
+}
+.zhiming_right li{
+  width:370px;
+  height:40px;
+  text-align: center;
+  line-height: 40px;
+  margin-top: 5px;
+}
+.zhiming_h3{
+  height:30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #e9f3fa;
+}
+/*****************************************************/
+
+center a span{
+  margin: 0 15px
+}
+/******************************************************************/
+.wenzhang_kuang{
+  width:800px;
+  border:1px solid #ccc;
+  padding:30px;
+  box-sizing: border-box;
+}
+.essay{
+  text-indent: 2em;
+  line-height: 30px;
+}
+.comment li{
+    border-bottom: 1px double gray;
+    padding: 15px;
+}
+.man{
+  margin-left: 80px;
+}
+.comment-data{
+   float: right;
+}
+.comment-info{
+  margin-left: 120px;
+}
+.biao1 button{
+	width:80px;
+	height: 30px;
+	color: #E7F5FE;
+	background-color: #458FD9;
+}
